@@ -1,0 +1,233 @@
+body {
+    background: #181320;
+    color: #ffd6fa;
+    font-family: 'Quicksand', 'Segoe UI', 'Arial', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
+    background-image:
+        url('./assets/kuromi1.webp');
+    background-size: 130px;
+    background-repeat: repeat;
+    filter: blur(4px);
+}
+
+#steps-root,
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.step-box {
+    position: relative;
+    background: #23182e;
+    border: 2px solid #ff8ed6;
+    border-radius: 20px;
+    box-shadow: 0 0 24px 4px #a259c6cc, 0 0 0 8px #23182e;
+    padding: 74px 74px 74px 74px;
+    max-width: 90vw;
+    min-width: 220px;
+    text-align: center;
+    color: #ffd6fa;
+    font-size: 1.3rem;
+    animation: fadeInStep 0.7s;
+    min-height: 40vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+    font-family: 'Quicksand', 'Segoe UI', 'Arial', sans-serif;
+}
+
+@keyframes fadeInStep {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.step-btn {
+    margin-top: 24px;
+    background: linear-gradient(90deg, #a259c6 0%, #ff8ed6 100%);
+    color: #23182e;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 36px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #ff8ed6cc;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    font-family: 'Quicksand', 'Segoe UI', 'Arial', sans-serif;
+}
+
+.step-btn:hover,
+.step-btn:active {
+    background: linear-gradient(90deg, #ff8ed6 0%, #a259c6 100%);
+    color: #a259c6;
+    box-shadow: 0 4px 24px #a259c6cc;
+}
+
+@media (max-width: 600px) {
+    .step-box {
+        padding: 54px 8vw 54px 8vw;
+        font-size: 1.05rem;
+        border-radius: 14px;
+    }
+
+    .step-btn {
+        padding: 10px 18px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+}
+
+.sticker {
+    position: absolute;
+    width: 112px;
+    height: 112px;
+    object-fit: contain;
+    border: 2px solid #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #a259c6cc;
+    background: #f494ff;
+    z-index: 2;
+}
+
+.sticker-top-left {
+    top: -38px;
+    left: -20px;
+    transform: rotate(-14deg);
+}
+
+.sticker-top-right {
+    top: -38px;
+    right: -20px;
+    transform: rotate(14deg);
+}
+
+.sticker-bottom-left {
+    bottom: -38px;
+    left: -20px;
+    transform: rotate(-14deg);
+}
+
+.sticker-bottom-right {
+    bottom: -38px;
+    right: -20px;
+    transform: rotate(14deg);
+}
+
+.type-char {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.18s;
+}
+
+.step-text {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    font-family: 'Quicksand', 'Segoe UI', 'Arial', sans-serif;
+}
+
+h1, h2, h3, .cute-heading {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 1px;
+}
+
+.sticker-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(30, 20, 40, 0.85);
+    z-index: 1001;
+}
+
+.sticker-modal-content {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    background: #23182e;
+    border-radius: 24px;
+    box-shadow: 0 8px 40px #a259c6cc;
+    padding: 32px 32px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+    max-width: 90vw;
+}
+
+.sticker-modal-img {
+    width: 320px;
+    max-width: 70vw;
+    height: auto;
+    border-radius: 18px;
+    border: 3px solid #ff8ed6;
+    box-shadow: 0 4px 24px #ff8ed6cc;
+    background: #fff;
+    margin-bottom: 18px;
+}
+
+.sticker-modal-close {
+    background: #ff8ed6;
+    color: #23182e;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    font-family: 'Pacifico', cursive;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #a259c6cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    margin: 0 auto;
+}
+
+.sticker-modal-close:hover {
+    background: #a259c6;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .sticker-modal-content {
+        padding: 16px 4vw 12px 4vw;
+        min-width: 0;
+        max-width: 98vw;
+    }
+    .sticker-modal-img {
+        width: 90vw;
+        max-width: 98vw;
+    }
+    .sticker-modal-close {
+        width: 36px;
+        height: 36px;
+        font-size: 1.5rem;
+    }
+}
