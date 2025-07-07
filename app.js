@@ -81,7 +81,7 @@ function showStickerModal(imageSrc) {
 
 function renderStep() {
     const root = document.getElementById('steps-root');
-    if (currentStep == 0) {
+    if (currentStep >= steps.length) {
         root.innerHTML = `<div class='step-box'><div style='margin-bottom: 20px;'>That's all for now! 💖</div><div><img src='./assets/11.jfif' style="width: 100%; height: 100%; object-fit: contain;" />
         <img src='./assets/12.jfif' style="width: 100%; height: 100%; object-fit: contain;" />
         <img src='./assets/13.jfif' style="width: 100%; height: 100%; object-fit: contain;" />

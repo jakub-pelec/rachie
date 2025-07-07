@@ -106,8 +106,8 @@ body::before {
 
 .sticker {
     position: absolute;
-    width: 112px;
-    height: 112px;
+    width: 160px;
+    height: 160px;
     object-fit: contain;
     border: 2px solid #fff;
     border-radius: 16px;
